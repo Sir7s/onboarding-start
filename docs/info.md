@@ -1,20 +1,27 @@
-<!---
-
-This file is used to generate your project datasheet. Please fill in the information below and delete any unused
-sections.
-
-You can also include images in this folder and reference them in the markdown. Each image must be less than
-512 kb in size, and the combined size of all images must be less than 1 MB.
--->
-
 ## How it works
 
-Explain how your project works
+This project is an SPI-controlled PWM peripheral for Tiny Tapeout.
+
+The design receives SPI commands on:
+- ui[0] = SCLK
+- ui[1] = COPI
+- ui[2] = nCS
+
+The SPI peripheral writes five internal control registers:
+- 0x00: enable output on uo_out[7:0]
+- 0x01: enable output on uio_out[7:0]
+- 0x02: enable PWM mode on uo_out[7:0]
+- 0x03: enable PWM mode on uio_out[7:0]
+- 0x04: PWM duty cycle
+
+These registers drive the provided PWM module, which generates the final 16 output signals.
 
 ## How to test
 
-Explain how to use your project
+Run the cocotb tests from the `test` folder.
+
+The SPI test writes to the control registers and checks that the outputs behave correctly.
 
 ## External hardware
 
-List external hardware used in your project (e.g. PMOD, LED display, etc), if any
+No external hardware is required for simulation.
