@@ -25,3 +25,4 @@ The SPI test writes to the control registers and checks that the outputs behave 
 ## External hardware
 
 No external hardware is required for simulation.
+
