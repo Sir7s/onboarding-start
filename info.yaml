@@ -1,3 +1,4 @@
+yaml_version: 6
 title: "ASIC Onboarding Project - Boyu Qiu"
 author: "Boyu Qiu"
 description: "SPI-controlled PWM peripheral for Tiny Tapeout."
