@@ -1,15 +1,23 @@
-yaml_version: 6
-title: "ASIC Onboarding Project - Boyu Qiu"
-author: "Boyu Qiu"
-description: "SPI-controlled PWM peripheral for Tiny Tapeout."
-top_module: "tt_um_uwasic_onboarding_boyu_qiu"
+project:
+  title: "ASIC Onboarding Project - Boyu Qiu"
+  author: "Boyu Qiu"
+  discord: "Sir7s"
+  description: "SPI-controlled PWM peripheral for Tiny Tapeout."
+  language: "verilog"
+  clock_hz: 0
 
-source_files:
-  - "project.v"
-  - "pwm_peripheral.v"
-  - "spi_peripheral.v"
+  tiles: "1x1"
 
+  top_module: "tt_um_uwasic_onboarding_boyu_qiu"
+
+  source_files:
+    - spi_peripheral.v
+    - pwm_peripheral.v
+    - project.v
+
+# NOT REQUIRED
 pinout:
+  # Inputs
   ui[0]: "SCLK"
   ui[1]: "COPI"
   ui[2]: "nCS"
@@ -19,6 +27,7 @@ pinout:
   ui[6]: ""
   ui[7]: ""
 
+  # Outputs
   uo[0]: "OUT_0"
   uo[1]: "OUT_1"
   uo[2]: "OUT_2"
@@ -28,6 +37,7 @@ pinout:
   uo[6]: "OUT_6"
   uo[7]: "OUT_7"
 
+  # Bidirectional pins
   uio[0]: "OUT_8"
   uio[1]: "OUT_9"
   uio[2]: "OUT_A"
@@ -36,3 +46,5 @@ pinout:
   uio[5]: "OUT_D"
   uio[6]: "OUT_E"
   uio[7]: "OUT_F"
+
+yaml_version: 6
